@@ -8,6 +8,7 @@ Perform the following steps to run this project.
 
    ```bash
    git clone https://github.com/bentoml/quickstart.git
+   cd quickstart
    ```
 
 2. Install the required dependencies:
