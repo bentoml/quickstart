@@ -1,0 +1,9 @@
+service: 'service:svc'
+include:
+  - '*.py'
+python:
+  packages:
+    - torch
+    - transformers
+models:
+  - summarization:latest
