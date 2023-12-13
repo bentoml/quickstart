@@ -1,9 +1,10 @@
-service: 'service:svc'
+service: "service:Summarization"
+labels:
+  owner: bentoml-team
+  project: gallery
 include:
-  - '*.py'
+  - "*.py"
 python:
   packages:
     - torch
     - transformers
-models:
-  - summarization:latest

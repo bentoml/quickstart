@@ -20,13 +20,13 @@ Perform the following steps to run this project.
 3. Download the Transformer model.
 
    ```bash
-   python download_model.py
+   python import_model.py
    ```
 
 4. Serve your model as an HTTP server. This starts a local server at [http://0.0.0.0:3000](http://0.0.0.0:3000/), making your model accessible as a web service.
    
    ```bash
-   bentoml serve service:svc
+   bentoml serve service:Summarization
    ```
 
 5. Build your Bento. In the BentoML framework, a Bento is a deployable artifact that contains your application's source code, models, configurations, and dependencies.
