@@ -2,7 +2,7 @@
 
 This quickstart demonstrates how to build a text summarization application with a Transformer model from the Hugging Face Model Hub.
 
-Perform the following steps to run this project.
+Perform the following steps to run this project and deploy it to BentoCloud.
 
 1. Clone the repository:
 
@@ -17,24 +17,18 @@ Perform the following steps to run this project.
    pip install -r requirements.txt
    ```
 
-3. Download the Transformer model.
-
-   ```bash
-   python download_model.py
-   ```
-
-4. Serve your model as an HTTP server. This starts a local server at [http://0.0.0.0:3000](http://0.0.0.0:3000/), making your model accessible as a web service.
+3. Serve your model as an HTTP server. This starts a local server at [http://localhost:3000](http://localhost:3000/), making your model accessible as a web service.
    
    ```bash
-   bentoml serve service:svc
+   bentoml serve .
    ```
 
-5. Build your Bento. In the BentoML framework, a Bento is a deployable artifact that contains your application's source code, models, configurations, and dependencies.
+4. Once your Service is ready, you can deploy it to [BentoCloud](https://www.bentoml.com/cloud). Make sure you have logged in to BentoCloud and run the following command to deploy it.
 
-   ```bash
-   bentoml build
+   ```
+   bentoml deploy .
    ```
 
-After your Bento is ready, you can push your Bento to [BentoCloud](https://www.bentoml.com/cloud) or containerize it with Docker and deploy it on a variety of platforms.
+   **Note**: Alternatively, you can manually build a Bento, containerize it with Docker, and deploy it in any Docker-compatible environment.
 
-For more information, see this [quickstart in the BentoML documentation](https://docs.bentoml.org/en/latest/quickstarts/deploy-a-transformer-model-with-bentoml.html).
+For more information, see [Quickstart in the BentoML documentation](https://docs.bentoml.com/en/1.2/get-started/quickstart.html).
