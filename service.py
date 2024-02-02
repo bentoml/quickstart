@@ -3,7 +3,7 @@ import bentoml
 from transformers import pipeline
 
 
-NEWS_PARAGRAPH = "Breaking News: In an astonishing turn of events, the small \
+EXAMPLE_INPUT = "Breaking News: In an astonishing turn of events, the small \
 town of Willow Creek has been taken by storm as local resident Jerry Thompson's cat, \
 Whiskers, performed what witnesses are calling a 'miraculous and gravity-defying leap.' \
 Eyewitnesses report that Whiskers, an otherwise unremarkable tabby cat, jumped \
@@ -23,6 +23,6 @@ class Summarization:
         self.pipeline = pipeline('summarization')
     
     @bentoml.api
-    def summarize(self, text: str = NEWS_PARAGRAPH) -> str:
+    def summarize(self, text: str = EXAMPLE_INPUT) -> str:
         result = self.pipeline(text)
         return result[0]['summary_text']
