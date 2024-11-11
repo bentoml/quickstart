@@ -1,6 +1,8 @@
 from __future__ import annotations
 import bentoml
-from transformers import pipeline
+
+with bentoml.importing():
+    from transformers import pipeline
 
 
 EXAMPLE_INPUT = "Breaking News: In an astonishing turn of events, the small \
