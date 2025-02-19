@@ -25,7 +25,8 @@ my_image = bentoml.images.PythonImage(python_version="3.11") \
     traffic={"timeout": 30},
 )
 class Summarization:
-    model_path = bentoml.models.HuggingFaceModel("facebook/bart-large-cnn")
+    # Define the Hugging Face model as a class variable
+    model_path = bentoml.models.HuggingFaceModel("sshleifer/distilbart-cnn-12-6")
 
     def __init__(self) -> None:
         # Load model into pipeline
