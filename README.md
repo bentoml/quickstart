@@ -26,13 +26,13 @@ Perform the following steps to run this project and deploy it to BentoCloud.
 3. Serve your model as an HTTP server. This starts a local server at [http://localhost:3000](http://localhost:3000/), making your model accessible as a web service.
    
    ```bash
-   bentoml serve .
+   bentoml serve
    ```
 
 4. Once your Service is ready, you can deploy it to [BentoCloud](https://www.bentoml.com/cloud). Make sure you have [logged in to BentoCloud](https://docs.bentoml.com/en/latest/bentocloud/how-tos/manage-access-token.html) and run the following command to deploy it.
 
    ```
-   bentoml deploy .
+   bentoml deploy
    ```
 
    **Note**: Alternatively, you can manually build a Bento, [containerize it with Docker](https://docs.bentoml.com/en/latest/guides/containerization.html), and deploy it in any Docker-compatible environment.

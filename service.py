@@ -15,16 +15,24 @@ breaches in the laws of physics. Local authorities are considering a town festiv
 to celebrate what is being hailed as 'The Leap of the Century."
 
 
+my_image = bentoml.images.PythonImage(python_version="3.11") \
+        .requirements_file("requirements.txt")
+
+
 @bentoml.service(
+    image=my_image,
     resources={"cpu": "2"},
-    traffic={"timeout": 10},
+    traffic={"timeout": 30},
 )
 class Summarization:
+    # Define the Hugging Face model as a class variable
+    model_path = bentoml.models.HuggingFaceModel("sshleifer/distilbart-cnn-12-6")
+
     def __init__(self) -> None:
         # Load model into pipeline
-        self.pipeline = pipeline('summarization')
+        self.pipeline = pipeline('summarization', model=self.model_path)
     
     @bentoml.api
     def summarize(self, text: str = EXAMPLE_INPUT) -> str:
         result = self.pipeline(text)
-        return result[0]['summary_text']
+        return f"Hello world! Here's your summary: {result[0]['summary_text']}"
