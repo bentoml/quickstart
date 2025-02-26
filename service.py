@@ -16,7 +16,7 @@ to celebrate what is being hailed as 'The Leap of the Century."
 
 
 my_image = bentoml.images.PythonImage(python_version="3.11") \
-        .requirements_file("requirements.txt")
+        .python_packages("torch", "transformers")
 
 
 @bentoml.service(

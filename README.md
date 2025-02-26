@@ -17,10 +17,10 @@ Perform the following steps to run this project and deploy it to BentoCloud.
    cd quickstart
    ```
 
-2. Install the required dependencies:
+2. Install BentoML and the required dependencies for the model.
 
    ```bash
-   pip install -r requirements.txt
+   pip install bentoml torch transformers
    ```
 
 3. Serve your model as an HTTP server. This starts a local server at [http://localhost:3000](http://localhost:3000/), making your model accessible as a web service.
