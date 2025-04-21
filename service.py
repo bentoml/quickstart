@@ -15,7 +15,7 @@ breaches in the laws of physics. Local authorities are considering a town festiv
 to celebrate what is being hailed as 'The Leap of the Century."
 
 
-my_image = bentoml.images.PythonImage(python_version="3.11") \
+my_image = bentoml.images.Image(python_version="3.11") \
         .python_packages("torch", "transformers")
 
 
